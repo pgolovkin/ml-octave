@@ -65,9 +65,14 @@ computeCost(X, y, theta)
 % run gradient descent
 theta = gradientDescent(X, y, theta, alpha, iterations);
 
+theta2 = normalEqn(X, y);
+
 % print theta to screen
 fprintf('Theta found by gradient descent: ');
 fprintf('%f %f \n', theta(1), theta(2));
+
+fprintf('Theta found by normal equation: ');
+fprintf('%f %f \n', theta2(1), theta2(2));
 
 % Plot the linear fit
 hold on; % keep previous plot visible
