@@ -25,14 +25,19 @@ sigma = zeros(1, size(X, 2));
 %
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
+X_mean = mean(X_norm);
+X_std = std(X_norm);
 
+length = size(X_norm)(1);
+width = size(X_norm)(2);
 
+for i = 1:width,
+	X_norm(:,i) = X_norm(:,i)-X_mean(:,i);
+end;
 
-
-
-
-
-
+for i = 1:width,
+	X_norm(:,i) = X_norm(:,i)/X_std(:,i);
+end;
 
 % ============================================================
 
